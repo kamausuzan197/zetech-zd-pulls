@@ -1,0 +1,68 @@
+$font-color:white;
+$background-color:black;
+
+//@mixin hover-Effects {
+   // color: $font-color;
+   // cursor: pointer;
+
+//}
+@mixin hover-active {
+    &:hover {
+      .no-touch & {
+        @content;
+      }
+    }
+    &:active {
+      .touch & {
+        @content;
+      }
+    }
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav__bar{
+    // flex box
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(71, 247, 71);
+    .logo{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        img{
+            width: 200px;
+            object-fit: contain;
+        }
+    }
+    .nav__info{
+        .nav__items{
+            list-style-type: none;
+            .nav__links{
+                display: flex;
+                justify-content: space-evenly;
+                padding: 20px;
+                a{
+                    text-decoration: none;
+                    word-spacing: normal;
+                    padding: 10px;
+                    font-size: xx-large;
+                    border: 3px solid $font-color;
+                    color: $background-color;
+                a:hover{
+                   // @include hover-Effects();
+                   a {
+                    @include hover-active {
+                      border: 1px solid red;
+                      color: blue;
+                    }
+                  }
+                }
+                }
+            }
+        }
+    }
+}
