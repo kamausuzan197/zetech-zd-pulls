@@ -69,12 +69,18 @@ $background-color:black;
     }
 main{
   width: 100%;
+  display: flex;
+  #chartContainer{
+    width: 100%;
+    height: auto;
+  }
   // background-color: rgb(45, 67, 192);
   #aspirants{
     display: flex;
     flex-direction: row;
     row-gap: 10px;
     width: 50%;
+    height: auto;
     margin-left: 20px;
     border-right: 2px solid rgb(216, 208, 208);
     margin-top: 0;
