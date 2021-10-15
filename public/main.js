@@ -16,14 +16,6 @@ form.addEventListener("submit", (e) =>{
 
       e.preventDefault()
 })
-//chart 
-
-// let dataPoints = [
-//     {label:"Person1", y:10},
-//     {label:"Person2", y:0},
-//     {label:"Person3", y:20},
-//     {label:"Person4", y:10},
-// ]
 window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer", {
 
