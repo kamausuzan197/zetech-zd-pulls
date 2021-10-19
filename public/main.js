@@ -1,21 +1,3 @@
-const form = document.querySelector("#aspirants")
-
-form.addEventListener("submit", (e) =>{
-    const choice = document.querySelector("input[name = zt]:cheked").value
-    const data = {zt:choice}
-
-    fetch("http://localhost:3001/index.html", {
-        method:"post",
-        body:JSON.stringify(data),
-        headers: new Headers({
-            "content-type":"application/json"
-        })
-    }).then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
-
-      e.preventDefault()
-})
 window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer", {
 
@@ -35,6 +17,15 @@ window.onload = function () {
      });
 
     chart.render();
+    //humberger menu
+    const menuBtn = document.querySelector(".humbuger")
+    const mobileNav = document.querySelector(".mobile-nav")
+    menuBtn.addEventListener('click', ()=>{
+      menuBtn.classList.toggle("is-active")
+      mobileNav.classList.toggle("is-active")
+    })
   }
-  //humburger menu
+
+
+  
   
