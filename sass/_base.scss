@@ -46,15 +46,13 @@ html,body {
                     // border: 3px solid $font-color;
                     color: $font-color;
                 }
+              :hover{
+                background-color: aqua;
+              }
             }
         }
-        .menu__icon{
-          i{
-            color: white;
-            text-align: center;
-            font-size: 2rem;
-            display: none;
-          }
+        .humbuger{
+          display: none;
         }
     }
 main{
@@ -121,12 +119,10 @@ main{
                     display: none;
                 }
             }
-        }
-        .menu__icon{
-          i{
+          }
+          .humbuger{
             display: block;
           }
-        }
     }
     main{
       display: flex;
