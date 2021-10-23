@@ -6,6 +6,10 @@ const path = require("path")
 //app
 const app = express()
 
+//set routes
+const president = require("./routes/president.js")
+const index = require("./routes/index")
+
 //set a public directory
 app.use(express.static(path.join(__dirname, "/public")))
 app.use(express.static(path.join(__dirname,"sass")))
@@ -20,12 +24,6 @@ app.get("/pages/library.html", function(req, res){
 app.get("/pages/finance.html", function(req, res){
     res.sendFile(path.join(__dirname,"/pages/finance.html"))
 })
-app.get("/pages/security.html", function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/security.html"))
-})
-app.get("/pages/sport.html", function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/sport.html"))
-})
 app.get("/pages/campaign.html", function(req, res){
     res.sendFile(path.join(__dirname,"/pages/campaign.html"))
 })
@@ -36,6 +34,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 //cors
 app.use(cors())
+app.use("/pages/president", president)
+app.use("/index", index)
 
 //port
 const port = 3000
