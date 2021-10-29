@@ -4,7 +4,7 @@ const form = document.querySelector("#aspirants")
 form.addEventListener('submit', (e) =>{
     const choice = document.querySelector("input[name = zt]:checked").value
     const data = {zt:choice}
-
+    console.log(data)
     fetch("http://localhost:3000/pages/president", {
         method:'post',
         body:JSON.stringify(data),
@@ -42,25 +42,23 @@ if(chartContiner){
     ]
   })
   chart.render()
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+     // Enable pusher logging - don't include this in production
+     Pusher.logToConsole = true;
 
-    var pusher = new Pusher('5eebcaa203111be8fb46', {
-      cluster: 'ap2'
-    });
+     var pusher = new Pusher('3a6a58dc11a8d051d8fd', {
+       cluster: 'ap2'
+     });
+ 
+     var channel = pusher.subscribe('zt-poll');
 
-    var channel = pusher.subscribe('zt-poll');
-    channel.bind('zt-vote', function(data) {
-      dataPoints = dataPoints.map(x =>{
-        if(x.label == data.zt){
-          x.y+= data.points
-          return x
-        } else {
-          return x
-        }
-      })
-      chart.render()
-    })
+     channel.bind('zt-vote', function(data) {
+       dataPoints.forEach(x =>{
+         if(x.label == data.zt){
+           x.y += data.points
+         }
+       })
+     });
+
 }
 //humberger
 const menuBtn = document.querySelector(".humbuger")
