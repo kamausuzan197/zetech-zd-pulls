@@ -2,6 +2,7 @@ const form = document.querySelector("#aspirants")
 
 //form event
 form.addEventListener('submit', (e) =>{
+  //when you click this button it responds by getting the data and initializing it as instructed 
     const choice = document.querySelector("input[name = zt]:checked").value
     const data = {zt:choice}
 
@@ -14,7 +15,7 @@ form.addEventListener('submit', (e) =>{
     }).then(res => res.json())
       .then(data => console.log(data))
       .catch(err => console.log(err))
-
+//e.is a function to desplay the defaul are of the page
     e.preventDefault()
 })
 //chart
