@@ -7,7 +7,7 @@ const path = require("path")
 const app = express()
 
 //set routes
-const president = require("./routes/president.js")
+const president = require("./routes/president")
 const index = require("./routes/index")
 
 //set a public directory
