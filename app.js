@@ -7,6 +7,7 @@ const path = require("path")
 const app = express()
 
 //set routes
+const library = require("./routes/library")
 const president = require("./routes/president")
 const index = require("./routes/index")
 
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 //cors
 app.use(cors())
+app.use("/pages/library", library)
 app.use("/pages/president", president)
 app.use("/index", index)
 

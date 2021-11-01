@@ -24,7 +24,8 @@
     "express": "^4.17.1",
     "node-sass": "^6.0.1",
     "path": "^0.12.7",
-    "pusher": "^5.0.0"
+    "pusher": "^5.0.0",
+    "pusher-js": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
