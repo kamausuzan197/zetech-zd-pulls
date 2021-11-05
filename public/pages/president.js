@@ -2,6 +2,7 @@ const form = document.querySelector("#aspirants")
 
 //form event
 form.addEventListener('submit', (e) =>{
+  //when you click this button it responds by getting the data and initializing it as instructed 
     const choice = document.querySelector("input[name = zt]:checked").value
     const data = {zt:choice}
     console.log(data)
@@ -14,7 +15,7 @@ form.addEventListener('submit', (e) =>{
     }).then(res => res.json())
       .then(data => console.log(data))
       .catch(err => console.log(err))
-
+//e.is a function to desplay the defaul are of the page
     e.preventDefault()
 })
 //chart
@@ -44,19 +45,20 @@ if(chartContiner){
   chart.render()
      // Enable pusher logging - don't include this in production
      Pusher.logToConsole = true;
-
-     var pusher = new Pusher('3a6a58dc11a8d051d8fd', {
-       cluster: 'ap2'
-     });
- 
+            
+     var pusher = new Pusher('5eebcaa203111be8fb46', {
+       cluster: 'ap2',
+       encryped:true
+     });  
      var channel = pusher.subscribe('zt-poll');
-
+ 
      channel.bind('zt-vote', function(data) {
-       dataPoints.forEach(x =>{
-         if(x.label == data.zt){
-           x.y += data.points
-         }
-       })
+       dataPoints.forEach((point)=>{
+           if(point.label==data.zt)
+           {
+                point.y+=data.points;
+           }
+       });
      });
 
 }
