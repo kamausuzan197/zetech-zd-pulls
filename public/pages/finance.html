@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/gif/png" href="./image/logo.png">
     <title>ZETECH UNIVERSITY E-VOTING SYSTEM</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link type="text/css" rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<!-- <p>this website will talk about school voting system</p>
-<p>the website consist of three part  </p> -->
-<!-- bam -->
 <nav class="nav__bar">
     <div class="logo">
         <a href="/index.html">
-            <img src="../image/logo-removebg-preview.png">
+            <img src="../image/logo-removebg-preview.png" >
         </a>
     </div>
     <div class="nav__info">
@@ -43,47 +40,49 @@
     </ul>
 </nav>
 <main>
-    <form name="aspirants" id="aspirants">
+    <form id="aspirants">
         <div class="upper__column">
             <div class="asp__profile">
-                <img src="../image/hamid-tajik-uvnApE6gmnM-unsplash.jpg" 
+                <img src="../image/megan-bagshaw-BDWM-YM2aXg-unsplash (2).jpg" 
                 alt="">
-                <h2>John Doe</h2>
+                <h2>Kael</h2>
                 <p>DCSS-01-1234/2020</p>
-                <input type="radio" name="john" id="john" value="JOHN">
-                <label for="john"></label>
+                <input type="radio" name="zt" id="kael" value="Kael">
+                <label for="kael"></label>
             </div>
             <div class="asp__profile">
-                <img src="../image/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg" 
+                <img src="../image/max-ilienerwise-YvWJOXHNJ94-unsplash.jpg" 
                 alt="">
-                <h2>John Doe</h2>
+                <h2>Suzan</h2>
                 <p>DCSS-01-1234/2020</p>
-                <input type="radio" name="john" id="john" value="JOHN">
-                <label for="john"></label>
+                <input type="radio" name="zt" id="suzan" value="Suzan">
+                <label for="suzan"></label>
             </div>
         </div>
         <div class="lower__column">
             <div class="asp__profile">
                 <img src="../image/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg" 
                 alt="">
-                <h2>John Doe</h2>
+                <h2>Peter</h2>
                 <p>DCSS-01-1234/2020</p>
-                <input type="radio" name="john" id="john" value="JOHN">
-                <label for="john"></label>
+                <input type="radio" name="zt" id="peter" value="Peter">
+                <label for="peter"></label>
             </div>
             <div class="asp__profile">
-                <img src="../image/imansyah-muhamad-putera-n4KewLKFOZw-unsplash.jpg" 
+                <img src="../image/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" 
                 alt="">
-                <h2>John Doe</h2>
+                <h2>John</h2>
                 <p>DCSS-01-1234/2020</p>
-                <input type="radio" name="john" id="john" value="JOHN">
+                <input type="radio" name="zt" id="john" value="John">
                 <label for="john"></label>
             </div>
+            <input type="submit" value="Vote">
         </div>
     </form>
     <div id="chartContainer"></div>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js"></script>
 <script src="../canvasjs.min.js"></script>
-<script src="../main.js"></script>
+<script src="./finance.js"></script>
 </body>
 </html>
