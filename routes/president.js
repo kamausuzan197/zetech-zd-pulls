@@ -3,13 +3,13 @@ const router = express.Router()
 
 const Pusher = require("pusher");
 
-let pusher = new Pusher({
-  appId: "1272131",
-  key: "5eebcaa203111be8fb46",
-  secret: "07bc03ca2b5887b9804d",
+const pusher = new Pusher({
+  appId: "1293041",
+  key: "73c25b9d3a1ce3868a22",
+  secret: "d6300c91838221fb35a3",
   cluster: "ap2",
-  useTLS: true,
-});
+  useTLS: true
+}); 
 
 router.get("/", (req, res) =>{
     res.send("president")
