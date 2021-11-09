@@ -1,2 +1,2 @@
 # E-voting-system
-This is an online zetech voting system - Sketching repository
+This is an online zetech polls
