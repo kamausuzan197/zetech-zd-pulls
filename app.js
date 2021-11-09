@@ -1,8 +1,15 @@
 const express = require("express")
-const bodyParser = require("body-parser")
 const cors = require("cors")
 const path = require("path")
+const moongose = require("mongoose")
 
+//db config
+const db = require('./config/keys').MongoURI
+
+//connect
+moongose.connect(db, { useNewUrlParser:true })
+.then(() => console.log('mongoDB connected'))
+.catch(err => console.log(err))
 //app
 const app = express()
 
@@ -11,6 +18,9 @@ const finance = require("./routes/finance")
 const library = require("./routes/library")
 const president = require("./routes/president")
 const index = require("./routes/index")
+const user = require("./routes/users")
+// const bodyParser = require("body-parser")
+
 
 //set a public directory
 app.use(express.static(path.join(__dirname, "/public")))
@@ -31,15 +41,15 @@ app.get("/pages/campaign.html", function(req, res){
 })
 
 //body parser midleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 //cors
 app.use(cors())
+app.use("/users", user)
 app.use("/pages/finance", finance)
 app.use("/pages/library", library)
 app.use("/pages/president", president)
-app.use("/index", index)
+app.use("/", index)
 
 //port
 const port = 3000
