@@ -5,7 +5,6 @@
     width: 30%;
     padding: 20px;
     margin: 0 auto;
-    margin-top: 5px;
     background-color: whitesmoke;
     // align-items: center;
     h2{
@@ -34,5 +33,21 @@
     }
     p{
         text-align: center;
+    }
+}
+@media screen and(max-width:768px){
+    main{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        .reg__form{
+            width: 300px;
+            margin: 0 auto;
+            margin-left:15%;
+            display: flex;
+            
+            align-items: center;
+    
+        }
     }
 }
