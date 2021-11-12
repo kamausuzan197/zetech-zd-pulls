@@ -36,3 +36,17 @@
         text-align: center;
     }
 }
+@media screen and(max-width:768px){
+    main{
+        display: flex;
+        margin: 0 auto;
+        .reg__form{
+            width: 300px;
+            margin: 0 auto;
+            display: flex;
+            // padding: 10px;
+            align-items: center;
+    
+        }
+    }
+}
