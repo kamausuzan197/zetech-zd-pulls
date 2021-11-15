@@ -39,7 +39,7 @@ app.use("/pages", pages)
 app.use("/", index)
 
 app.get('/', (req, res)=>{
-    res.render('/')
+    res.render('/views/index')
 })
 
 //port
