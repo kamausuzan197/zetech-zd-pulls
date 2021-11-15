@@ -17,7 +17,7 @@ router.get("/", (req, res) =>{
 
 router.post("/", (req, res) =>{
     pusher.trigger("zt-poll", "zt-vote", {
-        zt:req.body.zt,
+        zt:req.body,
         points:1
     });
     return res.json({

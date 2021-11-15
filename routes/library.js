@@ -11,8 +11,8 @@ const pusher = new Pusher({
     useTLS: true
   });
 
-router.get("/", (req, res) =>{
-    res.send("Library")
+router.get("/library", (req, res) =>{
+    res.render('library')
 })
 
 router.post("/", (req, res) =>{
