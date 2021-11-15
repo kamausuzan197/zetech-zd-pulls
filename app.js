@@ -38,6 +38,10 @@ app.use("/users", user)
 app.use("/pages", pages)
 app.use("/", index)
 
+app.get('/', (req, res)=>{
+    res.render('/')
+})
+
 //port
 const port = 3001
 
