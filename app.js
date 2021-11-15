@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const path = require("path")
 const moongose = require("mongoose")
+const expressLayouts = require("express-ejs-layouts")
 
 //db config
 const db = require('./config/keys').MongoURI
@@ -14,45 +15,31 @@ moongose.connect(db, { useNewUrlParser:true })
 const app = express()
 
 //set routes
-const finance = require("./routes/finance")
-const library = require("./routes/library")
-const president = require("./routes/president")
 const index = require("./routes/index")
+const pages = require("./routes/pages")
 const user = require("./routes/users")
-// const bodyParser = require("body-parser")
-
 
 //set a public directory
 app.use(express.static(path.join(__dirname, "/public")))
 app.use(express.static(path.join(__dirname,"sass")))
 
-//views
-app.get("/pages/president.html",function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/president.html"))
-})
-app.get("/pages/library.html", function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/library.html"))
-})
-app.get("/pages/finance.html", function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/finance.html"))
-})
-app.get("/pages/campaign.html", function(req, res){
-    res.sendFile(path.join(__dirname,"/pages/campaign.html"))
-})
-
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/js', express.static(__dirname + 'public/js'))
 //body parser midleware
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended:true }))
 app.use(express.json())
+
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
+
 //cors
 app.use(cors())
 app.use("/users", user)
-app.use("/pages/finance", finance)
-app.use("/pages/library", library)
-app.use("/pages/president", president)
+app.use("/pages", pages)
 app.use("/", index)
 
 //port
-const port = 3000
+const port = 3001
 
 //server
 app.listen(port, () => console.log(`server running on ${port}`))
