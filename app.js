@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname,"sass")))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 //body parser midleware
-app.use(express.urlencoded({ extended:true }))
+app.use(express.urlencoded({ extended:false }))
 app.use(express.json())
 
 app.use(expressLayouts);
@@ -37,6 +37,10 @@ app.use(cors())
 app.use("/users", user)
 app.use("/pages", pages)
 app.use("/", index)
+
+app.get('/', (req, res)=>{
+    res.render('/views/index')
+})
 
 //port
 const port = 3001

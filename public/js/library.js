@@ -4,7 +4,7 @@ form.addEventListener('submit', (e) =>{
     const choice = document.querySelector("input[type = text]").value
     const data = {zt:choice}
     console.log(data)
-    fetch("http://localhost:3000/pages/library", {
+    fetch("http://localhost:3001/pages/library", {
         method:'post',
         body:JSON.stringify(data),
         Headers:new Headers({
