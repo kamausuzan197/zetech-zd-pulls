@@ -14,14 +14,14 @@ router.get('/register', (req, res)=>{
     res.render('register')
 })
 router.post('/register', (req, res)=>{
-    const { fname, sname, email, pass, cpass } = req.body.form
+    console.log(req.body)
+    const { fname, sname, email, pass, cpass } = req.body
     let errors = []
 
     //check required fields
     if(!fname || !sname || !email || !pass){
         errors.push({ msg:'please fill all fields' })
     }
-
     //check passwords match
     if(pass !== cpass){
         errors.push({ msg:'passwords do not match' })

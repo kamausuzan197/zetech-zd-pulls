@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) =>{
         method:'post',
         body:JSON.stringify(data),
         Headers:new Headers({
-            'content-type':'application/json'
+            'content-type':'application/javascript'
         })
     }).then(res => res.json())
       .then(data => console.log(data))
