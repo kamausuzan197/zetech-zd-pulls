@@ -16,7 +16,7 @@ moongose.connect(db, { useNewUrlParser:true })
 const app = express()
 
 //set routes
-const index = require("./routes/index")
+// const index = require("./routes/index")
 const pages = require("./routes/pages")
 const user = require("./routes/users")
 
@@ -37,11 +37,11 @@ app.set('view engine', 'ejs');
 app.use(cors())
 app.use("/users", user)
 app.use("/pages", pages)
-app.use("/", index)
+// app.use("/", index)
 
-app.get('/', (req, res)=>{
-    res.render('index')
-})
+// app.get('/', (req, res)=>{
+//     res.render('index')
+// })
 
 //port
 const port = 3001
