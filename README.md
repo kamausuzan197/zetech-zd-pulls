@@ -95,10 +95,8 @@ You need to use a phone or laptop to access the website.
 
 #### Landing Page
 The landing page is expected to look as shown below.
+
 ![Landing Page](./documentation/landing page.png)
-
-
-#### Dashboard
 
 #### Login Page
 
@@ -110,8 +108,11 @@ The Login Page Design:
 The sign up design:
 ![Sign Up page](documentation/Registration.png)
 #### Campaign page
+
 ![Campaign page](documentation/Campaign page.png)
+
 ### Voting page
+
 ![Voting page](documentation/Voting page.png)
 
 #### Users Table
