@@ -114,6 +114,11 @@ The sign up design:
 ### Voting page
 
 ![Voting page](documentation/voting.png)
+=======
+![Sign Up page](documentation/Registration.png)#### Campaign page
+![Campaign page](documentation/Campaignpage.png)
+### Voting page
+![Voting page](documentation/Voting.png)
 
 #### Users Table
 - Id - This will be auto increment which will the unique identifier for the user
