@@ -103,7 +103,7 @@ The landing page is expected to look as shown below.
 #### Login Page
 
 The Login Page Design:
-![Login Page](documentation/log in page.png)
+![Login Page](./documentation/log in page.png)
 
 #### Registration Page
 
