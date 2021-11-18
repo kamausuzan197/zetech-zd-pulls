@@ -95,7 +95,7 @@ You need to use a phone or laptop to access the website.
 
 #### Landing Page
 The landing page is expected to look as shown below.
-![Landing Page](./documentation/landing page.png)
+![Landing Page](./documentation/landing.png)
 
 
 #### Dashboard
@@ -103,16 +103,15 @@ The landing page is expected to look as shown below.
 #### Login Page
 
 The Login Page Design:
-![Login Page](documentation/log in page.png)
+![Login Page](documentation/login.png)
 
 #### Registration Page
 
 The sign up design:
-![Sign Up page](documentation/Registration.png)
-#### Campaign page
-![Campaign page](documentation/Campaign page.png)
+![Sign Up page](documentation/Registration.png)#### Campaign page
+![Campaign page](documentation/Campaignpage.png)
 ### Voting page
-![Voting page](documentation/Voting page.png)
+![Voting page](documentation/Voting.png)
 
 #### Users Table
 - Id - This will be auto increment which will the unique identifier for the user
