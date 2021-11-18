@@ -1,4 +1,5 @@
 # E-voting-system
+<<<<<<< HEAD
 This is an online zetech voting system 
 This is a campus based online voting system used by students to vote for their required leader and see a real time system.
 ## Table of Contents
@@ -140,3 +141,6 @@ The sign up design:
 - Title
 - Description
 - Last_updated
+=======
+This is an online zetech polls
+>>>>>>> 78568ebaf0637a4574776bf11f9060c2008beabf

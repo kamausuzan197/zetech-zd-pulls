@@ -5,8 +5,8 @@ form.addEventListener('submit', (e) =>{
   //when you click this button it responds by getting the data and initializing it as instructed 
     const choice = document.querySelector("input[name = zt]:checked").value
     const data = {zt:choice}
-
-    fetch("http://localhost:3000/pages/president", {
+    console.log(data)
+    fetch("http://localhost:3001/pages/finance", {
         method:'post',
         body:JSON.stringify(data),
         Headers:new Headers({
@@ -20,15 +20,15 @@ form.addEventListener('submit', (e) =>{
 })
 //chart
 let dataPoints = [
-  { label: 'John', y: 0},
+  { label: 'Kael', y: 0},
+  { label: 'Suzan', y: 0},
   { label: 'Peter', y: 0},
-  { label: 'David', y: 0},
-  { label: 'Mercy', y: 0},
+  { label: 'John', y: 0},
 ]
 
-const chartContiner = document.querySelector("#chartContainer")
+const chartContainer = document.querySelector("#chartContainer")
 
-if(chartContiner){
+if(chartContainer){
   const chart = new CanvasJS.Chart('chartContainer', {
     animationEnabled:true,
     theme:'theme1',
@@ -43,25 +43,24 @@ if(chartContiner){
     ]
   })
   chart.render()
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
 
-    var pusher = new Pusher('5eebcaa203111be8fb46', {
-      cluster: 'ap2'
-    });
+        var pusher = new Pusher('73c25b9d3a1ce3868a22', {
+          cluster: 'ap2'
+        });
+    
+        var channel = pusher.subscribe('zt-poll');
 
-    var channel = pusher.subscribe('zt-poll');
-    channel.bind('zt-vote', function(data) {
-      dataPoints = dataPoints.map(x =>{
-        if(x.label == data.zt){
-          x.y+= data.points
-          return x
-        } else {
-          return x
-        }
-      })
-      chart.render()
-    })
+        channel.bind('zt-vote', function(data) {
+          dataPoints.forEach((point)=>{
+              if(point.label==data.zt)
+              {
+                   point.y+=data.points;
+              }
+          });
+       
+        })
 }
 //humberger
 const menuBtn = document.querySelector(".humbuger")
