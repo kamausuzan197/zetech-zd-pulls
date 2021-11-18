@@ -1,5 +1,4 @@
 # E-voting-system
-<<<<<<< HEAD
 This is an online zetech voting system 
 This is a campus based online voting system used by students to vote for their required leader and see a real time system.
 ## Table of Contents
@@ -9,7 +8,7 @@ This is a campus based online voting system used by students to vote for their r
   - [Objectives](#objectives)
   - [Users](#users)
   - [Technologies](#technologies)
-  - [Contributing Guide](#contributing-guide)
+  - [ Run website](#Run website)
   - [REQUIREMENTS SPECIFICATION](#requirements-specification)
     - [Technical Requirements](#technical-requirements)
     - [Non-functional requirements](#non-functional-requirements)
@@ -25,7 +24,7 @@ This is a campus based online voting system used by students to vote for their r
       - [voting Page](#voting-page)
     - [Database package](#database-package)
       - [Users Table](#users-table)
-      - [access Table](#access-table)
+      - [votes-Table](#votes-table)
 
 ## Problem Statement
 An E-voting system that allows student to register,follow campaigns,commenting and voting their learders in. This will reduce time wastage ,and it will increase transparency to voters because its a real time voting system. Currently students vote using a voting website that is shared by a number of university and its not transparent and it doesn't allow the votes to know their leaders batter.This will reduce the rate of cheating among the students during the voting time.
@@ -35,27 +34,33 @@ The main objective of this project is to create an E-voting system  web based ap
 1. To create a users management module that will allow registration of students for voting purposes,login.
 2. To create a  system that will allow users to follow along in the campaing.
 3. To create an voting system log in system  that will allow users to votes and campaign.
-4. To create an event management module that will allow creation of new events, notification and archiving of due events.
-5. To create ideation module that will creation of proposal for new ideas.
-6. to create a real time project that when someone votes they see their code.
+4. To create a real time project that when someone votes can see they voted for.
 
 ## Users
 1. campus students
-2. System administrators/moderators.
+2. System administrators.
 
 ## Technologies
 The system we build on JAM stack with the following technologies
-- Javascript - React.......node js
-- HTML,CSS
-- mango db
+- Javascript
+-EJS
+- HTML,SCSS
+- MONGO DB
 
-## Contributing Guide
-To contribute to this project follow the steps below.
-1. Fork this repository to your account.
-2. clone the repository to your local machine.
-3. Create a branch with the name of feature you want to add or a issue you want to fix.
-4. Add the feature and push to github.
-5. Create a pull request with the develop branch.
+## Run Website
+To run this website
+1. clone the repository to your local machine.
+```#!/bin/bash
+git clone <url>
+```
+2. install dependancies
+```#!/bin/bash
+npm install
+```
+3. run the app
+```#!/bin/bash
+npm start
+```
 
 ## REQUIREMENTS SPECIFICATION
 
@@ -72,75 +77,50 @@ You need to use a phone or laptop to access the website.
 #### Users Module
 - Registration
 - login
-- Password reset
-- verify email
-- profile update
+- Password
 
 #### campaing module
 - log in
 - upload your campaign
 
-#### president module
+#### voting module
 - you just get in to the page and vote 
-
-#### Clubs/Societies Module
-- view club
-- create new club
-- Enroll/unenroll to/from a club
-- add/delete/edit Members
-- Invite a friend
 
 
 ## Software Design Description
+
 
 ### User Interface Design
 
 
 #### Landing Page
-
-
-
-
-
 The landing page is expected to look as shown below.
-![Landing Page](./documentation/landing.PNG)
-![Landing Page](./documentation/landing-page.png)
+![Landing Page](./documentation/landing page.png)
+
 
 #### Dashboard
 
 #### Login Page
 
 The Login Page Design:
-![Login Page](documentation/login-page.png)
+![Login Page](documentation/log in page.png)
 
 #### Registration Page
 
 The sign up design:
-![Sign Up page](documentation/sign-up-page.png)
-
-#### Create Event Page
-
-### Database Design
+![Sign Up page](documentation/Registration.png)
+#### Campaign page
+![Campaign page](documentation/Campaign page.png)
+### Voting page
+![Voting page](documentation/Voting page.png)
 
 #### Users Table
 - Id - This will be auto increment which will the unique identifier for the user
 - email - This will be a school email
-- name - User given name
-- username - will be unique for each user
-- gender - This should be male, female or other
-- password - should be atleast 8 characters
-- is_staff - a boolean value identifying whether a user is a staff or not.
-- is_super_admin - a boolean value identifying whether a user is super admin or not. False by default.
-- last_updated - Will be a timestamp.
-- campus - Identify the users campus.
-#### Events Table
-- Event_id
-- Date
-- Time
-- Added_by
-- Title
-- Description
-- Last_updated
-=======
-This is an online zetech polls
->>>>>>> 78568ebaf0637a4574776bf11f9060c2008beabf
+- name first name and second name - User given name
+- password - should be atleast 6 characters
+
+#### vote Table
+- id
+- person voted for
+- voter id
