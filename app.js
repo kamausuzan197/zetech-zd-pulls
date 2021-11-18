@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const db = require('./config/keys').MongoURI
 
 //connect
-moongose.connect(db, { useNewUrlParser:true })
+moongose.connect(db, { useNewUrlParser:false })
 .then(() => console.log('mongoDB connected'))
 .catch(err => console.log(err))
 //app
