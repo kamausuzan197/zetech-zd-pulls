@@ -17,7 +17,7 @@ router.get('/library', (req, res)=>{
     res.render('library')
 })
 router.post("/library", (req, res) => {
-    console.log(req.body.zt);
+  console.log(req.body.zt);
   pusher.trigger("zt-poll", "zt-vote", {
     points: 1,
     zt: req.body.zt,

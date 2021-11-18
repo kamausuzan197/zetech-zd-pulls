@@ -14,8 +14,9 @@ router.get('/register', (req, res)=>{
     res.render('register')
 })
 router.post('/register', (req, res)=>{
-    const { fname, sname, email, pass, cpass } = req.body.form
-    let errors = []
+    console.log(req.body)
+    // const { fname, sname, email, pass, cpass } = req.body.form
+    // let errors = []
 
     //check required fields
     if(!fname || !sname || !email || !pass){
