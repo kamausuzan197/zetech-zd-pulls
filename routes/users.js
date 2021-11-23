@@ -38,7 +38,7 @@ router.post('/register', (req, res)=>{
                     pass
                 })
                 console.log(newUser)
-                res.send('hello')
+                res.render('login')
             }
         })
     }
